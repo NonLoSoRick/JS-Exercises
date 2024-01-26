@@ -79,10 +79,11 @@ console.log(pets);}
   },
 ]
 
-cars.forEach(car => {
-  
-  car.licensePlate = 'ZXC404';
-});
+const licensePlateValue = 'ZXC404';
+
+for (let i = 0; i < cars.length; i++) {
+  cars[i].licensePlate = licensePlateValue;
+}
 
 console.log(cars);}
 
@@ -121,13 +122,14 @@ const newCar = {
 };
 cars.push(newCar);
 
-cars.forEach(car => {
+for (let i = 0; i < cars.length; i++) {
+  const car = cars[i];
   if (car.trims.length > 0) {
     car.trims.pop();
   }
-});
+}
 
-console.log(cars);}
+console.log(cars)}
 
 
 /* ESERCIZIO 7
@@ -157,12 +159,12 @@ const cars = [
 
 const justTrims = []
 
-cars.forEach(car => {
+for (let i = 0; i < cars.length; i++) {
+  const car = cars[i];
   if (car.trims.length > 0) {
     justTrims.push(car.trims[0]);
   }
-});
-
+}
 
 console.log(justTrims);
 
@@ -193,13 +195,15 @@ console.log(justTrims);
 ];
 
 
-cars.forEach(car => {
+for (let i = 0; i < cars.length; i++) {
+  const car = cars[i];
   if (car.color.charAt(0).toLowerCase() === 'b') {
     console.log('Fizz');
   } else {
     console.log('Buzz');
   }
-});}
+}}
+
 
 /* ESERCIZIO 9
     Utilizza un ciclo while per stampare in console i valori del seguente array numerico fino al raggiungimento del numero 32.
@@ -227,16 +231,4 @@ while (i < numericArray.length) {
 */
 
 
-const charactersArray = ['g', 'n', 'u', 'z', 'd'];
-const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-
-const positionsArray = [];
-
-charactersArray.forEach(char => {
-  const charLower = char.toLowerCase(); 
-  const position = alphabet.indexOf(charLower) + 1; 
-  positionsArray.push(position);
-});
-
-console.log(positionsArray);
 
